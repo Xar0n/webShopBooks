@@ -15,7 +15,7 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->string('FIO', 1000);
+            $table->string('FIO', 255);
             $table->unsignedBigInteger('author_id');
             $table->foreign('author_id')->references('id')->on('authors');
         });
