@@ -1,0 +1,14 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+	/*text-align: center;*/
+	width: auto;
+  	/*background: #e1e1e1;*/
+    margin-bottom: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
+	/*max-width: 900px;*/
+	padding: 0 15px;
+}

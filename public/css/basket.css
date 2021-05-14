@@ -1,0 +1,45 @@
+#cartModal .container {
+  padding: 2rem 0rem;
+}
+
+#cartModal .table-image {
+    thead {
+    td, th {
+      border: 0;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  }
+  
+td, th {
+    vertical-align: middle;
+    text-align: center;
+    
+    &.qty {
+      max-width: 2rem;
+    }
+  }
+}
+
+#cartModal .priceCart {
+  margin-left: 1rem;
+}
+
+#cartModal .modal-footer {
+  padding-top: 0rem;
+}
+
+#enscart_my_counter_wrapper {
+    cursor: pointer;
+    min-width: 30px;
+    height: 30px;
+    background-color: #d62240;
+    color: #fff;
+    border-radius: 30px;
+    position: absolute;
+    text-align: center;
+    line-height: 30px;
+    font-family: Arial,sans-serif;
+    margin: -62px 40px;
+    z-index: 1150;
+}
