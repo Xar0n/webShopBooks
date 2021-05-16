@@ -20,9 +20,11 @@ class CreateBooksTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('series_id');
             $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('main_img');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('series_id')->references('id')->on('series');
             $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('main_img')->references('id')->on('images');
         });
     }
 

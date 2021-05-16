@@ -15,7 +15,11 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('FIO', 255);
+            $table->integer('phone');
+            $table->string('address', 1000);
+            $table->binary('delivery');
+            $table->integer('sum');
         });
     }
 
