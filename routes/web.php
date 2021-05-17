@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app.index');
 });
+
+Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers\Auth'], function() {
+    Route::get('login', ['as' => 'login', 'uses' => 'LoginController@showLoginForm']);
+    Route::post('login', ['as' => 'login.post', 'uses' => 'LoginController@login']);
+    Route::post('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
+});
+
+Route::group(['prefix' => '/admin_panel', 'middleware' => 'admin', 'namespace' => 'Admin'],function () {
+
+});
