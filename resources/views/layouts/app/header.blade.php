@@ -11,17 +11,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown06">
-                            <li><a class="dropdown-item" href="#">Ранобэ</a></li>
-                            <li><a class="dropdown-item" href="#">Фантастика</a></li>
-                            <li><a class="dropdown-item" href="#">Детективы</a></li>
-                            <li><a class="dropdown-item" href="#">Триллеры</a></li>
-                            <li><a class="dropdown-item" href="#">Ужасы</a></li>
-                            <li><a class="dropdown-item" href="#">Мистика</a></li>
-                            <li><a class="dropdown-item" href="#">Класссика</a></li>
-                            <li><a class="dropdown-item" href="#">Поэзия</a></li>
-                            <li><a class="dropdown-item" href="#">Роман</a></li>
-                            <li><a class="dropdown-item" href="#">Проза</a></li>
-                            <li><a class="dropdown-item" href="#">Научно-популярное</a></li>
+                            @if(isset($categories))
+                                @foreach($categories as $category)
+                                    <li><a class="dropdown-item" href="{{ url("/category/$category->id") }}">{{ $category->title }}</a></li>
+                                @endforeach
+                            @endif
                         </ul>
                     </li>
                     <li class="nav-item">

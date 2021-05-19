@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    @include('layouts.app.head');
+    @include('layouts.app.head')
 </head>
 <body class="d-flex flex-column h-100" style="background: #E9ECEF">
-@include('layouts.app.header');
+@include('layouts.app.header')
 @yield('content')
 <!-- ФУТЕР -->
 <footer class="footer mt-auto py-3 bg-dark">
