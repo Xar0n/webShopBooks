@@ -54,4 +54,8 @@ class Categories extends Model
     // Functions ...
 
     // Relations ...
+    public function books()
+    {
+        return $this->hasMany(Books::class, 'category_id');
+    }
 }

@@ -30,7 +30,7 @@ class Books extends Model
      * @var array
      */
     protected $fillable = [
-        'author_id', 'category_id', 'description', 'series_id', 'title'
+        'publisher_id','author_id', 'category_id', 'description', 'series_id', 'title'
     ];
 
     /**
@@ -64,4 +64,33 @@ class Books extends Model
     // Functions ...
 
     // Relations ...
+    public function category()
+    {
+        return $this->belongsTo(Categories::class, 'category_id');
+    }
+
+    public function series()
+    {
+        return $this->belongsTo(Series::class, 'series_id');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(Authors::class, 'author_id');
+    }
+
+    public function publisher()
+    {
+        return $this->belongsTo(Publishers::class, 'publisher_id');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Images::class, 'book_id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Orders::class, 'book_id');
+    }
 }

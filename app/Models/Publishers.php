@@ -2,22 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @property string     $address
- * @property string     $FIO
- * @property int        $phone
- * @property int        $sum
- */
-class Payments extends Model
+class Publishers extends Model
 {
+    use HasFactory;
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'payments';
+    protected $table = 'publishers';
 
     /**
      * The primary key for the model.
@@ -32,7 +28,7 @@ class Payments extends Model
      * @var array
      */
     protected $fillable = [
-        'address', 'delivery', 'FIO', 'phone', 'sum'
+        'title'
     ];
 
     /**
@@ -50,8 +46,9 @@ class Payments extends Model
      * @var array
      */
     protected $casts = [
-        'address' => 'string', 'FIO' => 'string', 'phone' => 'int', 'sum' => 'int'
+        'img' => 'string', 'title' => 'string'
     ];
+
 
     /**
      * Indicates if the model should be timestamped.
@@ -65,8 +62,8 @@ class Payments extends Model
     // Functions ...
 
     // Relations ...
-    public function orders()
+    public function books()
     {
-        return $this->hasMany(Orders::class, 'payment_id');
+        return $this->hasMany(Books::class, 'publisher_id');
     }
 }

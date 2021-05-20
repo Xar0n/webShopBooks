@@ -62,4 +62,8 @@ class Authors extends Model
     // Functions ...
 
     // Relations ...
+    public function books()
+    {
+        return $this->hasMany(Books::class, 'author_id');
+    }
 }

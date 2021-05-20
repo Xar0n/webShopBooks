@@ -62,4 +62,13 @@ class Orders extends Model
     // Functions ...
 
     // Relations ...
+    public function book()
+    {
+        return $this->belongsTo(Books::class, 'book_id');
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo(Payments::class, 'payment_id');
+    }
 }

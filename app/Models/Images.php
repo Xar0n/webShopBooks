@@ -61,4 +61,8 @@ class Images extends Model
     // Functions ...
 
     // Relations ...
+    public function book()
+    {
+        return $this->belongsTo(Books::class, 'book_id');
+    }
 }

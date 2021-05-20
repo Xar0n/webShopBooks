@@ -64,4 +64,8 @@ class Series extends Model
     // Functions ...
 
     // Relations ...
+    public function books()
+    {
+        return $this->hasMany(Books::class, 'series_id');
+    }
 }
