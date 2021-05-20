@@ -15,7 +15,7 @@ class AddPublisherToBooksTable extends Migration
     {
         Schema::table('books', function (Blueprint $table) {
             $table->unsignedBigInteger('publisher_id');
-            $table->foreign('publisher_id')->references('id')->on('publishers');
+            $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');;
         });
     }
 

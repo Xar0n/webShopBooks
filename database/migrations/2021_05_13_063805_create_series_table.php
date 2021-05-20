@@ -18,7 +18,7 @@ class CreateSeriesTable extends Migration
             $table->string('title', 255);
             $table->string('img', 1000);
             $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');;
         });
     }
 

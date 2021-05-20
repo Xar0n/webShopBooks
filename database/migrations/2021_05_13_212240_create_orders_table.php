@@ -15,11 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('book_id');            
+            $table->unsignedBigInteger('book_id');
             $table->Integer('count');
             $table->unsignedBigInteger('payment_id');
-            $table->foreign('book_id')->references('id')->on('books');
-            $table->foreign('payment_id')->references('id')->on('payments');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');;
+            $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade');;
         });
     }
 
