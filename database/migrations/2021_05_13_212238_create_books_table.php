@@ -16,9 +16,10 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title', 255);
-            $table->string('description', 255);
+            $table->string('description', 1000);
+            $table->integer('price');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('series_id');
+            $table->unsignedBigInteger('series_id')->nullable('true');
             $table->unsignedBigInteger('author_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('series_id')->references('id')->on('series')->onDelete('cascade');

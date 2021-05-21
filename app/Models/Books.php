@@ -30,7 +30,7 @@ class Books extends Model
      * @var array
      */
     protected $fillable = [
-        'publisher_id','author_id', 'category_id', 'description', 'series_id', 'title'
+        'publisher_id','author_id', 'category_id', 'description', 'series_id', 'title', 'price'
     ];
 
     /**
@@ -92,5 +92,10 @@ class Books extends Model
     public function orders()
     {
         return $this->hasMany(Orders::class, 'book_id');
+    }
+
+    public function popularity()
+    {
+        return $this->hasOne(Popularity::class, 'book_id');
     }
 }

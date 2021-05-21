@@ -6,6 +6,7 @@
 <body class="d-flex flex-column h-100" style="background: #E9ECEF">
 @include('layouts.app.header')
 @yield('content')
+</body>
 <!-- ФУТЕР -->
 <footer class="footer mt-auto py-3 bg-dark">
     <div class="row justify-content-md-center">

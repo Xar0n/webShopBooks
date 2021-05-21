@@ -2,18 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- */
-class Images extends Model
+class Popularity extends Model
 {
+    use HasFactory;
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'images';
+    protected $table = 'popularity';
 
     /**
      * The primary key for the model.
@@ -28,7 +28,7 @@ class Images extends Model
      * @var array
      */
     protected $fillable = [
-        'book_id', 'main', 'name'
+        'book_id', 'count'
     ];
 
     /**
@@ -49,6 +49,7 @@ class Images extends Model
 
     ];
 
+
     /**
      * Indicates if the model should be timestamped.
      *
@@ -56,11 +57,7 @@ class Images extends Model
      */
     public $timestamps = false;
 
-    // Scopes...
 
-    // Functions ...
-
-    // Relations ...
     public function book()
     {
         return $this->belongsTo(Books::class, 'book_id');

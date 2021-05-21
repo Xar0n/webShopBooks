@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->string('FIO', 255);
             $table->integer('phone');
             $table->string('address', 1000);
-            $table->binary('delivery');
+            $table->boolean('delivery');
             $table->integer('sum');
         });
     }

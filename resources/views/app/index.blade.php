@@ -4,205 +4,66 @@
     <main class="flex-md-shrink-0" >
         <div class="col-md-12 block">
             <p class="block-title">Популярное</p>
-            <div class="row justify-content-md-center">
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="book.html">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="book.html"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col add-to-cart">
-                            <input type="hidden" name="hidden_title" id="title1" value="Планета людей">
-                            <input type="hidden" name="hidden_price" id="price1" value="800">
-                            <button type="button" name="add_cart" id="1" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
+            @if(isset($books_popular))
+                <div class="row justify-content-md-center">
+                @foreach($books_popular as $popular)
+                            <div class="col-md-2">
+                                <div class="product2">
+                                    <div class="col" style="background:#DEE2E6">
+                                        <p class="product-title2"> <a href="{{ url('/book/'.$popular->book['id']) }}">{{ $popular->book['title'] }}</a></p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="product-img2"> <a href="{{ url('/book/'.$popular->book['id']) }}"><img src="{{asset('/img/books/'.$popular->book['id'].'/')}}" alt="" class="img2"></a></div>
+                                    </div>
+                                    <div class="col">
+                                        <p class="product-author"></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="product-price2">{{ $popular->book['price'] }}</p>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary button-buy">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+                @endforeach
                 </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
         <div class="col-md-12 block">
             <p class="block-title">Новинки</p>
-            <div class="row justify-content-md-center">
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="product2">
-                        <div class="col" style="background:#DEE2E6">
-                            <p class="product-title2"> <a href="#">Планета людей</a></p>
-                        </div>
-                        <div class="col">
-                            <div class="product-img2"> <a href="#"><img src="img/planet_of_people.png" alt="" class="img2"></a></div>
-                        </div>
-                        <div class="col">
-                            <p class="product-author">Антуан де Сент-Экзюпери</p>
-                        </div>
-                        <div class="col">
-                            <p class="product-price2">800 ₽</p>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @if(isset($books))
+                @php $j = 0;@endphp
+                @foreach($books as $book)
+                    @if($j == 0)
+                            <div class="row justify-content-md-center">
+                    @endif
+                                <div class="col-md-2">
+                                    <div class="product2">
+                                        <div class="col" style="background:#DEE2E6">
+                                            <p class="product-title2"> <a href="{{ url('/book/'.$book->id) }}">{{ $book->title }}</a></p>
+                                        </div>
+                                        <div class="col">
+                                            <div class="product-img2"> <a href="{{ url('/book/'.$book->id) }}"><img src="{{asset('/img/books/'.$book->id.'/'.$book->img['name'])}}" alt="" class="img2"></a></div>
+                                        </div>
+                                        <div class="col">
+                                            <p class="product-author">{{ $book->author['FIO'] }}</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="product-price2">{{ $book->price }}</p>
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                @php  $j++; @endphp
+                        @if($j == 5 || $last_id == $book->id)
+                             @php  $j = 0 @endphp
+                            </div>
+                        @endif
+                @endforeach
+            @endif
         </div>
         <!-- ПАГИНАЦИЯ -->
         <div class="col-md-12">

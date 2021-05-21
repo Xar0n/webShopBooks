@@ -12,15 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('app.index');
+Route::group([ 'namespace' => 'App\Http\Controllers'], function() {
+    Route::get('/', ['as' => '/', 'uses' => 'BookController@index']);
 });
 
 Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers\Auth'], function() {
     Route::get('login', ['as' => 'login', 'uses' => 'LoginController@showLoginForm']);
     Route::post('login', ['as' => 'login.post', 'uses' => 'LoginController@login']);
-    Route::post('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
+    Route::post('logout', ['as' => 'logout', 'uses' => 'LoginCoApp\Http\ntroller@logout']);
 });
 
 Route::group(['prefix' => '/admin_panel', 'middleware' => 'admin', 'namespace' => 'Admin'],function () {
