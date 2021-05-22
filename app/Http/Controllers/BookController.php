@@ -6,6 +6,7 @@ use App\Models\Books;
 use App\Models\Images;
 use App\Models\Popularity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {

@@ -8,3 +8,4 @@
 <link href="{{ asset('css/navbar-top-fixed.css') }}" rel="stylesheet">
 <link href="{{ asset('css/sticky-footer.css') }}" rel="stylesheet">
 <link href="{{ asset('css/basket.css') }}" rel="stylesheet">
+<meta name="csrf-token" content="{{ csrf_token() }}" />

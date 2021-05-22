@@ -21,8 +21,10 @@
                                     <div class="col">
                                         <p class="product-price2">{{ $popular->book['price'] }}₽</p>
                                     </div>
+                                    <input type="hidden" name="hidden_title" id="title{{ $popular->book['id'] }}" value="{{ $popular->book['title'] }}"/>
+                                    <input type="hidden" name="hidden_price" id="price{{ $popular->book['id'] }}" value="{{ $popular->book['price'] }}"/>
                                     <div class="col">
-                                        <button type="button" class="btn btn-primary button-buy">В корзину</button>
+                                        <button {{ $popular->book['id'] }}  type="button" class="btn btn-primary button-buy add_to_cart">В корзину</button>
                                     </div>
                                 </div>
                             </div>
@@ -52,8 +54,10 @@
                                         <div class="col">
                                             <p class="product-price2">{{ $book->price }}₽</p>
                                         </div>
+                                        <input type="hidden" name="hidden_title" id="title{{ $book->id }}" value="{{ $book->title }}"/>
+                                        <input type="hidden" name="hidden_price" id="price{{ $book->id }}" value="{{ $book->price }}"/>
                                         <div class="col">
-                                            <button type="button" class="btn btn-primary button-buy">В корзину</button>
+                                            <button id="{{ $book->id }}" type="button" class="btn btn-primary button-buy add_to_cart">В корзину</button>
                                         </div>
                                     </div>
                                 </div>
