@@ -19,13 +19,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/series.html">Серии</a>
+                        <a class="nav-link" aria-current="page" href="{{ url("/series") }}">Серии</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalOrder">Статус заказа</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/info.html">О нас</a>
+                        <a class="nav-link" aria-current="page" href="{{ url("/info") }}">О нас</a>
                     </li>
                 </ul>
                 <!-- Иконка корзины -->

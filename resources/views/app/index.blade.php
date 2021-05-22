@@ -13,13 +13,13 @@
                                         <p class="product-title2"> <a href="{{ url('/book/'.$popular->book['id']) }}">{{ $popular->book['title'] }}</a></p>
                                     </div>
                                     <div class="col">
-                                        <div class="product-img2"> <a href="{{ url('/book/'.$popular->book['id']) }}"><img src="{{asset('/img/books/'.$popular->book['id'].'/')}}" alt="" class="img2"></a></div>
+                                        <div class="product-img2"> <a href="{{ url('/book/'.$popular->book['id']) }}"><img src="{{asset('/img/books/'.$popular->book['id'].'/'.$popular->book['img']['name'])}}" alt="" class="img2"></a></div>
                                     </div>
                                     <div class="col">
-                                        <p class="product-author"></p>
+                                        <p class="product-author">{{ $popular->book['author']['FIO'] }}</p>
                                     </div>
                                     <div class="col">
-                                        <p class="product-price2">{{ $popular->book['price'] }}</p>
+                                        <p class="product-price2">{{ $popular->book['price'] }}₽</p>
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-primary button-buy">В корзину</button>
@@ -50,7 +50,7 @@
                                             <p class="product-author">{{ $book->author['FIO'] }}</p>
                                         </div>
                                         <div class="col">
-                                            <p class="product-price2">{{ $book->price }}</p>
+                                            <p class="product-price2">{{ $book->price }}₽</p>
                                         </div>
                                         <div class="col">
                                             <button type="button" class="btn btn-primary button-buy">В корзину</button>
