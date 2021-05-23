@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @property int        $count
- * @property int        $book_id
- */
-class Popularity extends Model
+class Statuses extends Model
 {
     use HasFactory;
     /**
@@ -17,7 +13,7 @@ class Popularity extends Model
      *
      * @var string
      */
-    protected $table = 'popularity';
+    protected $table = 'statuses';
 
     /**
      * The primary key for the model.
@@ -32,7 +28,7 @@ class Popularity extends Model
      * @var array
      */
     protected $fillable = [
-        'book_id', 'count'
+        'name'
     ];
 
     /**
@@ -50,7 +46,6 @@ class Popularity extends Model
      * @var array
      */
     protected $casts = [
-
     ];
 
 
@@ -61,9 +56,13 @@ class Popularity extends Model
      */
     public $timestamps = false;
 
+    // Scopes...
 
-    public function book()
+    // Functions ...
+
+    // Relations ...
+    public function payments()
     {
-        return $this->belongsTo(Books::class, 'book_id');
+        return $this->hasMany(Payments::class, 'status_id');
     }
 }

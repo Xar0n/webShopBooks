@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', $book->title)
+@section('script')
+    <script src="{{ asset('js/book.js') }}"></script>
+@endsection
 @section('content')
     <main class="flex-md-shrink-0" >
         <div class="text-center block_title_page">

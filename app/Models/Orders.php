@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int        $count
+ * @property int        $book_id
+ * @property int        $payment_id
  */
 class Orders extends Model
 {

@@ -31,37 +31,40 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="post">
+                <form method="get" onsubmit="return isValidForm()">
                     <div class="mb-3 row" style="border-bottom-width: 1px">
                         <label for="inputFio" class="col-sm-2 col-form-label">ФИО</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputFio" name="fio">
+                            <input type="text" class="form-control" id="inputFio" name="fio" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="inputFio" class="col-sm-2 col-form-label">Телефон</label>
+                        <label for="inputNumber" class="col-sm-2 col-form-label">Телефон</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputFio" name="telephone">
+                            <input type="number" class="form-control" id="inputNumber" name="telephone" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="radioDelivery" class="col-sm-2 col-form-label">Доставка</label>
-                        <input class="form-check-input check" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." name="delivery">
+                        <label for="checkboxDelivery" class="col-sm-2 col-form-label">Доставка</label>
+                        <input class="form-check-input check" type="checkbox" id="checkboxDelivery" value="" aria-label="..." name="delivery" required>
                     </div>
                     <div class="mb-3 row">
                         <label for="inputAdress" class="col-sm-2 col-form-label">Адрес</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputAdress" name="adress">
+                            <input type="text" class="form-control" id="inputAddress" name="adress" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="inputAgreement" class="col-sm-4 col-form-label">Согласие на обработку данных</label>
-                        <input class="form-check-input check" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." name="agreement">
+                        <label for="checkboxAgreement" class="col-sm-4 col-form-label">Согласие на обработку данных</label>
+                        <input class="form-check-input check" type="checkbox" id="checkboxAgreement" value="" aria-label="..." name="agreement" required>
+                    </div>
+                    <div class="mb-3 row">
+                        <p class="text-left">Сумма к оплате: <span id="total_price_payment"></span></p>
                     </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-                <button type="input" name="payment" class="btn btn-primary">Перейти к оплате</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" name="payment" class="btn btn-primary" id="add_payment" data-bs-dismiss="modal">Перейти к оплате</button>
             </div>
             </form>
         </div>

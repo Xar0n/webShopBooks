@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string     $address
  * @property string     $FIO
  * @property int        $phone
+ * @property string     $number
  * @property int        $sum
+ * @property int        $status_id
+ * @property boolean    $delivery
  */
 class Payments extends Model
 {
@@ -32,7 +35,7 @@ class Payments extends Model
      * @var array
      */
     protected $fillable = [
-        'address', 'delivery', 'FIO', 'phone', 'sum'
+        'address', 'delivery', 'FIO', 'phone', 'sum', 'status_id', 'number'
     ];
 
     /**
@@ -50,7 +53,7 @@ class Payments extends Model
      * @var array
      */
     protected $casts = [
-        'address' => 'string', 'FIO' => 'string', 'phone' => 'int', 'sum' => 'int'
+        'address' => 'string', 'FIO' => 'string', 'phone' => 'int', 'sum' => 'int', 'number' => 'string'
     ];
 
     /**
@@ -68,5 +71,10 @@ class Payments extends Model
     public function orders()
     {
         return $this->hasMany(Orders::class, 'payment_id');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Statuses::class, 'status_id');
     }
 }

@@ -20,6 +20,9 @@ class CreatePaymentsTable extends Migration
             $table->string('address', 1000);
             $table->boolean('delivery');
             $table->integer('sum');
+            $table->string('number', 20);
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')->references('id')->on('statuses');
         });
     }
 

@@ -26,6 +26,7 @@ class CartController extends Controller
         } else {
             return json_encode('empty');
         }
+        Session::put('total_price', $total_price);
         $data = array(
             'cart_details' => $output,
             'total_price' => number_format($total_price, 2),
