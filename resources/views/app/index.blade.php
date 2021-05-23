@@ -13,7 +13,7 @@
                                         <p class="product-title2"> <a href="{{ url('/book/'.$popular->book['id']) }}">{{ $popular->book['title'] }}</a></p>
                                     </div>
                                     <div class="col">
-                                        <div class="product-img2"> <a href="{{ url('/book/'.$popular->book['id']) }}"><img src="{{asset('/img/books/'.$popular->book['id'].'/'.$popular->book['img']['name'])}}" alt="" class="img2"></a></div>
+                                        <div class="product-img2"> <a href="{{ url('/book/'.$popular->book['id']) }}"><img src="{{ asset('/img/books/'.$popular->book['id'].'/'.$popular->book['img']['name']) }}" alt="" class="img2"></a></div>
                                     </div>
                                     <div class="col">
                                         <p class="product-author">{{ $popular->book['author']['FIO'] }}</p>
@@ -21,10 +21,8 @@
                                     <div class="col">
                                         <p class="product-price2">{{ $popular->book['price'] }}₽</p>
                                     </div>
-                                    <input type="hidden" name="hidden_title" id="title{{ $popular->book['id'] }}" value="{{ $popular->book['title'] }}"/>
-                                    <input type="hidden" name="hidden_price" id="price{{ $popular->book['id'] }}" value="{{ $popular->book['price'] }}"/>
                                     <div class="col">
-                                        <button {{ $popular->book['id'] }}  type="button" class="btn btn-primary button-buy add_to_cart">В корзину</button>
+                                        <button id="{{ $popular->book['id'] }}"  type="button" class="btn btn-primary button-buy add_to_cart">В корзину</button>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +44,7 @@
                                             <p class="product-title2"> <a href="{{ url('/book/'.$book->id) }}">{{ $book->title }}</a></p>
                                         </div>
                                         <div class="col">
-                                            <div class="product-img2"> <a href="{{ url('/book/'.$book->id) }}"><img src="{{asset('/img/books/'.$book->id.'/'.$book->img['name'])}}" alt="" class="img2"></a></div>
+                                            <div class="product-img2"> <a href="{{ url('/book/'.$book->id) }}"><img src="{{ asset('/img/books/'.$book->id.'/'.$book->img['name']) }}" alt="" class="img2"></a></div>
                                         </div>
                                         <div class="col">
                                             <p class="product-author">{{ $book->author['FIO'] }}</p>
@@ -54,8 +52,6 @@
                                         <div class="col">
                                             <p class="product-price2">{{ $book->price }}₽</p>
                                         </div>
-                                        <input type="hidden" name="hidden_title" id="title{{ $book->id }}" value="{{ $book->title }}"/>
-                                        <input type="hidden" name="hidden_price" id="price{{ $book->id }}" value="{{ $book->price }}"/>
                                         <div class="col">
                                             <button id="{{ $book->id }}" type="button" class="btn btn-primary button-buy add_to_cart">В корзину</button>
                                         </div>

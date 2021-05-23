@@ -12,6 +12,7 @@ class BookController extends Controller
 {
     public function index()
     {
+
         $books = Books::with('author')->get()->sortByDesc('id');
         $count = 0;
         foreach ($books as $book) { //НИКОГДА ТАК НЕ ДЕЛАЙ!!!!!!!!!
@@ -30,7 +31,7 @@ class BookController extends Controller
 
     public function book($id)
     {
-        $book = Books::with('author', 'images', 'category', 'series', 'publisher', 'images')->findOrFail($id);
+        $book = Books::with('author', 'images', 'category', 'series', 'publisher')->findOrFail($id);
         $main_img = Images::where([['book_id', '=', $book->id], ['main', '=', 1]])->first();
         return view('app.book',['book' => $book, 'main_img' => $main_img]);
     }

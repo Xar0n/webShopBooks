@@ -78,7 +78,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <table class="table table-imageCart">
+                <table class="table table-imageCart" id="cart_table">
                     <thead>
                     <tr>
                         <th scope="col"></th>
@@ -90,79 +90,15 @@
                     </tr>
                     </thead>
                     <tbody id="product-list">
-                    <tr>
-                        <td class="w-25">
-                            <img src="img/planet_of_people.png" class="img-fluid img-thumbnail" alt="Sheep">
-                        </td>
-                        <td>Антуан де Сент-Экзюпери, Планета людей</td>
-                        <td>800 Р</td>
-                        <td class="qty"><input type="number" class="form-control" id="input1" value="1" required min="1" max="100"></td>
-                        <td>800 Р</td>
-                        <td>
-                            <a href="#" class="btn btn-danger btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w-25">
-                            <img src="img/planet_of_people.png" class="img-fluid img-thumbnail" alt="Sheep">
-                        </td>
-                        <td>Антуан де Сент-Экзюпери, Планета людей</td>
-                        <td>800 Р</td>
-                        <td class="qty"><input type="number" class="form-control" id="input1" value="1" required min="1" max="100"></td>
-                        <td>800 Р</td>
-                        <td>
-                            <a href="#" class="btn btn-danger btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w-25">
-                            <img src="img/planet_of_people.png" class="img-fluid img-thumbnail" alt="Sheep">
-                        </td>
-                        <td>Антуан де Сент-Экзюпери, Планета людей</td>
-                        <td>800 Р</td>
-                        <td class="qty"><input type="number" class="form-control" id="input1" value="1" required min="1" max="100"></td>
-                        <td>800 Р</td>
-                        <td>
-                            <a href="#" class="btn btn-danger btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w-25">
-                            <img src="img/planet_of_people.png" class="img-fluid img-thumbnail" alt="Sheep">
-                        </td>
-                        <td>Антуан де Сент-Экзюпери, Планета людей</td>
-                        <td>800 Р</td>
-                        <td class="qty"><input type="number" class="form-control" id="input1" value="1" required min="1" max="100"></td>
-                        <td>800 Р</td>
-                        <td>
-                            <a href="#" class="btn btn-danger btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-end">
-                    <h5>Конечная стоимость: <span class="price text-success" id="total_price">1600 Р</span></h5>
+                <div class="d-flex justify-content-end" id="part_cart">
+                    <h5>Конечная стоимость: <span class="price text-success" id="total_price">0Р</span></h5>
                 </div>
             </div>
             <div class="modal-footer border-top-0 d-flex justify-content-between">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalPayOrder">Перейти оформлению заказа</button>
+                <button id="pay" type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalPayOrder">Перейти оформлению заказа</button>
             </div>
         </div>
     </div>

@@ -37,7 +37,7 @@
                             <p>{{ $book->price }}₽</p>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-lg">В корзину</button>
+                            <button id="{{ $book->id }}" type="submit" class="btn btn-primary btn-lg add_to_cart">В корзину</button>
                         </div>
                     </div>
                     <div class="col-md-4 description_page">

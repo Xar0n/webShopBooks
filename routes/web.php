@@ -17,6 +17,7 @@ Route::group([ 'namespace' => 'App\Http\Controllers'], function() {
     Route::get('/book/{id}', 'BookController@book');
     Route::post('/cart/item', 'CartController@item');
     Route::post('/cart/add', 'CartController@add');
+    Route::post('/cart/delete', 'CartController@delete');
 });
 
 Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers\Auth'], function() {
