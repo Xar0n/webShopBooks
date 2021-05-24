@@ -17,7 +17,7 @@ $(document).ready(function () {
                 if(data === "empty") {
                     $('#product-list').html('<tr>\n' +
                         '     <td colspan="5" align="center">\n' +
-                        '      Your Cart is Empty!\n' +
+                        '      Ваша корзина пуста!\n' +
                         '     </td>\n' +
                         '    </tr>');
                     $('#pay').prop("disabled",true);

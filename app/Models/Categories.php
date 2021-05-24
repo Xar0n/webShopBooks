@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int        $created_at
- * @property int        $updated_at
+ * @property string       $title
  */
 class Categories extends Model
 {

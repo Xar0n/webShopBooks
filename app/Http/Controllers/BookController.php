@@ -12,13 +12,13 @@ class BookController extends Controller
 {
     public function index()
     {
-
-        $books = Books::with('author')->get()->sortByDesc('id');
+        $last_id = 0;
+        $books = Books::with('author')->orderBy('id', 'desc')->paginate(35);
         $count = 0;
         foreach ($books as $book) { //НИКОГДА ТАК НЕ ДЕЛАЙ!!!!!!!!!
             $book->img = Images::where([['book_id', '=', $book->id], ['main', '=', 1]])->first();
             $count++;
-            if ($count = count($books)) {
+            if ($count == count($books)) {
                 $last_id = $book->id;
             }
         }
