@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property string     $description
  * @property string     $title
+ * @property int     $available
+ * @property int     $price
  */
 class Books extends Model
 {
@@ -30,7 +32,7 @@ class Books extends Model
      * @var array
      */
     protected $fillable = [
-        'publisher_id','author_id', 'category_id', 'description', 'series_id', 'title', 'price'
+        'publisher_id','author_id', 'category_id', 'description', 'series_id', 'title', 'price', 'available'
     ];
 
     /**

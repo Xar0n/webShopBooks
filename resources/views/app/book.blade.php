@@ -34,7 +34,7 @@
                             <div class="a_page"><a href="{{ url('/series/'.$book->series['id']) }}">{{ $book->series['title'] }}</a></div>
                             @endif
                             <div class="a_page"><a href="{{ url('/publisher/'.$book->publisher['id']) }}">{{ $book->publisher['title'] }}</a></div>
-                            <p>Имеется 330 экземпляров</p>
+                            <p>Имеется {{  $book->available }} экземпляров</p>
                         </div>
                         <div class="price_page d-flex justify-content-center">
                             <p>{{ $book->price }}₽</p>
