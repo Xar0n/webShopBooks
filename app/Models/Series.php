@@ -64,6 +64,10 @@ class Series extends Model
     // Functions ...
 
     // Relations ...
+    public function author()
+    {
+        return $this->belongsTo(Authors::class, 'author_id');
+    }
     public function books()
     {
         return $this->hasMany(Books::class, 'series_id');
