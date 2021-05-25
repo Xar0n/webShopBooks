@@ -10,7 +10,7 @@
         @foreach($series as $series)
         <div class="row justify-content-md-center block_series">
             <div class="col-md-1 col-lg-1">
-                <a href="{{ url('/series/'.$series->series['id']) }}"><img class="img_series" src="{{ asset('/img/series/.$series->series['id']}')}}" alt=""></a>
+                <a href="{{ url('/series/'.$series->series['id']) }}"><img class="img_series" src="{{ asset('/img/series/.$series->series['img']}')}}" alt=""></a>
             </div>
             <div class="col-md-2 col-lg-2 blockTitle_series">
                 <a href="#" class="text-decoration-none">
