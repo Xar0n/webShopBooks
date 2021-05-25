@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::group([ 'namespace' => 'App\Http\Controllers'], function() {
     Route::get('/', ['as' => '/', 'uses' => 'BookController@index']);
     Route::get('/book/{id}', 'BookController@book');
+    Route::get('/series', 'SeriesController@series');
 
     Route::get('/category/{id}', 'CategoryController@category');
 
