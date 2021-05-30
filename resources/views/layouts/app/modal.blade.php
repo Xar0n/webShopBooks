@@ -10,13 +10,13 @@
                 <div class="mb-3">
                     <label for="CodeInput" class="form-label">Введите номер заказа, выданный после оплаты, чтобы узнать его статус</label>
                     <hr>
-                    <input type="text" name="code" class="form-control" id="CodeInput" required min="1" max="255" placeholder="Номер заказа">
+                    <input type="text" name="code" class="form-control" id="number_payment" required min="1" max="255" placeholder="Номер заказа">
                     <hr>
-                    <label class="form-label">Статус заказа:</label>
+                    <label class="form-label">Статус заказа: <span id="status_payment"></span></label>
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-                <button type="button" class="btn btn-primary">Поиск</button>
+                <button type="button" class="btn btn-primary" id="status">Поиск</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
             </div>
         </div>

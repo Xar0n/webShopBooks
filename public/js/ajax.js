@@ -98,14 +98,14 @@ $(document).ready(function () {
 
     $(document).on('click', '#status', function(){
         var action = "status_payment";
+        var number = $('#number_payment').val();
         $.ajax({
-            //$id
             url:"/payment/status",
             method:"POST",
-            data:{action:action},
+            data:{action:action, number_payment:number},
             success:function(data)
             {
-
+                $('#status_payment').html(data);
             }
         });
     });

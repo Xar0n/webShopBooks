@@ -62,6 +62,16 @@ class PaymentController extends Controller
 
     public function status(Request $request)
     {
+        if ($request->has('action') && $request->get('action') == 'status_payment') {
+            try {
 
+                $number = $request->get('number_payment');
+                $payment = Payments::where('number', '=', $number)->first();
+                if (!empty($payment)) return $payment->status['name'];
+                else return 'Заказ отстутствует';
+            } catch (\ErrorException $e) {
+                return 'Заказ отстутствует';
+            }
+        } else return 'Заказ отстутствует';
     }
 }
