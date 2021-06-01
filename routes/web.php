@@ -27,6 +27,8 @@ Route::group([ 'namespace' => 'App\Http\Controllers'], function() {
     Route::post('/payment/show', 'PaymentController@show');
     Route::post('/payment/add', 'PaymentController@add');
     Route::post('/payment/status', 'PaymentController@status');
+
+    Route::get('/search', 'SearchController@search');
 });
 
 Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers\Auth'], function() {

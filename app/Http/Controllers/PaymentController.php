@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddPaymentRequest;
+use App\Http\Requests\ShowPaymentRequest;
+use App\Http\Requests\StatusPaymentRequest;
 use App\Models\Books;
 use App\Models\Orders;
 use App\Models\Payments;
@@ -12,17 +15,16 @@ use Illuminate\Support\Facades\Session;
 
 class PaymentController extends Controller
 {
-    public function show(Request $request)
+    public function show(ShowPaymentRequest $request)
     {
-        if ($request->has('action') && $request->get('action') == 'show_payment' && Session::has('total_price')) {
+        if ($request->get('action') == 'show_payment' && Session::has('total_price')) {
             return Session::get('total_price');
         }
     }
 
-    public function add(Request $request)
+    public function add(AddPaymentRequest $request)
     {
-        if (Session::has('shopping_cart') && !empty(Session::get('shopping_cart')) &&
-            $request->has('action') && $request->get('action') == 'add_payment') {
+        if (Session::has('shopping_cart') && !empty(Session::get('shopping_cart')) && $request->get('action') == 'add_payment') {
             $number = substr(md5(time()), 0, 16);
             $payment = new Payments();
             $payment->FIO = $request->get('FIO');
@@ -60,9 +62,9 @@ class PaymentController extends Controller
         }
     }
 
-    public function status(Request $request)
+    public function status(StatusPaymentRequest $request)
     {
-        if ($request->has('action') && $request->get('action') == 'status_payment') {
+        if ($request->get('action') == 'status_payment') {
             try {
 
                 $number = $request->get('number_payment');

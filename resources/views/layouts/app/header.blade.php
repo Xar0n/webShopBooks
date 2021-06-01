@@ -29,7 +29,7 @@
                     </li>
                 </ul>
                 <!-- Иконка корзины -->
-                <ul class="nav col-12 col-md-auto my-2 justify-content-center my-md-0 text-medium">
+                <ul class="nav col-11 col-md-auto my-2 justify-content-center my-md-0 text-medium">
                     <li>
                         <a href="#" class="nav-link text-secondary" data-bs-toggle="modal" data-bs-target="#cartModal">
                             <svg class="bi d-block mx-auto mb-1" width="43" height="43" xmlns="http://www.w3.org/2000/svg" fill="#0D6EFD" class="bi bi-basket3-fill" viewBox="0 0 16 16">
@@ -40,33 +40,35 @@
                     </li>
                 </ul>
                 <!--  -->
-                <form class="d-flex col-4">
-                    <div class="btn-group col">
+                <form method="get" action="{{ url('/search') }}">
+                    <div class="btn-group col d-flex col-6">
                         <div class="form-check form-check-inline me-2 check ">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" onclick="toggle_visibility('filter')">
+                            <input  class="form-check-input" type="checkbox" name="filters" id="inlineCheckbox1" value="1" onclick="toggle_visibility('filter')">
                             <label class="form-check-label" for="inlineCheckbox1" style="color:white">Фильтры</label>
                         </div>
-                        <input class="form-control me-2" type="search" placeholder="Введите название категории, книги, автора, серии" aria-label="Search">
-                        <button type="button" class="btn btn-primary">Найти</button>
+                        <input name="query" class="form-control me-2 col-4" type="search" placeholder="Введите название книги" aria-label="Search">
+                        <button type="submit" class="btn btn-primary">Найти</button>
                     </div>
-                </form>
+
             </div>
             <div style="display:none" id="filter">
-                <form class="d-flex">
+
+                    <div class="d-flex">
                     <div class="btn-group">
                         <label class="col-form-label me-2" style="color:white">Цена</label>
-                        <input type="number" class="form-control me-2" placeholder="От" aria-label="Search" min="0">
-                        <input type="number" class="form-control me-2" placeholder="До" aria-label="Search" min="0">
+                        <input type="number" name="priceFrom" class="form-control me-2" placeholder="От" aria-label="Search" min="0">
+                        <input type="number" name="priceBy" class="form-control me-2" placeholder="До" aria-label="Search" min="0">
                         <label class="col-form-label me-2" style="color:white">Издательство</label>
-                        <input class="form-control me-2" type="search" placeholder="Название" aria-label="Search">
+                        <input name="publisher" class="form-control me-2" type="search" placeholder="Название" aria-label="Search">
                         <div class="form-check form-check-inline me-2 check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <input name="discount" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1">
                             <label class="form-check-label" for="inlineCheckbox2" style="color:white">Скидка</label>
                         </div>
                         <div class="form-check form-check-inline check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                            <input name="availability" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1">
                             <label class="form-check-label" for="inlineCheckbox" style="color:white">Наличие</label>
                         </div>
+                    </div>
                     </div>
                 </form>
             </div>
