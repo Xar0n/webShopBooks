@@ -25,7 +25,7 @@ class StatusPaymentRequest extends FormRequest
     {
         return [
             'action' => 'required',
-            'number' => 'required|min:16|max:16'
+            'number_payment' => 'required|min:16|max:16'
         ];
     }
 }

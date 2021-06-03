@@ -3,7 +3,7 @@
 @section('content')
     <main class="flex-md-shrink-0" >
         <div class="col-md-12 block">
-            <p class="block-title">{{ $series->title }}</p>
+            <p class="block-title">Серия: {{ $series->title }}</p>
             @if(isset($books))
                 @php $j = 0;@endphp
                 @foreach($books as $book)

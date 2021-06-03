@@ -40,13 +40,13 @@
                     </li>
                 </ul>
                 <!--  -->
-                <form method="get" action="{{ url('/search') }}">
-                    <div class="btn-group col d-flex col-6">
+                <form method="get" class="col-4 d-flex" action="{{ url('/search') }}">
+                    <div class="btn-group col d-flex">
                         <div class="form-check form-check-inline me-2 check ">
                             <input  class="form-check-input" type="checkbox" name="filters" id="inlineCheckbox1" value="1" onclick="toggle_visibility('filter')">
                             <label class="form-check-label" for="inlineCheckbox1" style="color:white">Фильтры</label>
                         </div>
-                        <input name="query" class="form-control me-2 col-4" type="search" placeholder="Введите название книги" aria-label="Search">
+                        <input name="query" class="form-control me-2" type="search" placeholder="Введите название книги" aria-label="Search">
                         <button type="submit" class="btn btn-primary">Найти</button>
                     </div>
 

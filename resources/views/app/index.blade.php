@@ -68,7 +68,7 @@
 
 
         <!-- ПАГИНАЦИЯ -->
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-top: 64px">
             <div class="row">
                 <div class="col-md-1">
                 </div>

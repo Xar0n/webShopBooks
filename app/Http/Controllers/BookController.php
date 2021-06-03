@@ -15,7 +15,7 @@ class BookController extends Controller
         $last_id = 0;
         $books = Books::with('author')->orderBy('id', 'desc')->paginate(35);
         $count = 0;
-        foreach ($books as $book) { //НИКОГДА ТАК НЕ ДЕЛАЙ!!!!!!!!!
+        foreach ($books as $book) {
             $book->img = Images::where([['book_id', '=', $book->id], ['main', '=', 1]])->first();
             $count++;
             if ($count == count($books)) {
@@ -24,7 +24,7 @@ class BookController extends Controller
         }
         $books_popular = Popularity::with('book', 'book.author')->limit(5)->get()->sortByDesc('count');
         foreach ($books_popular as $book) {
-            $book->book->img = Images::where([['book_id', '=', $book->id], ['main', '=', 1]])->first();
+            $book->book->img = Images::where([['book_id', '=', $book->book->id], ['main', '=', 1]])->first();
         }
         return view('app.index',['books' => $books, 'last_id' => $last_id, 'books_popular' => $books_popular]);
     }

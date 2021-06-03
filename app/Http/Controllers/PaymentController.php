@@ -72,8 +72,8 @@ class PaymentController extends Controller
                 if (!empty($payment)) return $payment->status['name'];
                 else return 'Заказ отстутствует';
             } catch (\ErrorException $e) {
-                return 'Заказ отстутствует';
+                return 'Заказ отсутствует';
             }
-        } else return 'Заказ отстутствует';
+        } else return 'Заказ отсутствует';
     }
 }
